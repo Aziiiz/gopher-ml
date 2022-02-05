@@ -2,6 +2,7 @@ package common
 
 import (
 	"errors"
+	"math"
 
 	"gonum.org/v1/gonum/floats"
 	"gonum.org/v1/gonum/mat"
@@ -31,4 +32,14 @@ func SumAlongAxis(axis int, m *mat.Dense) (*mat.Dense, error) {
 		return nil, errors.New("invalid axis must be 0 or 1")
 	}
 	return output, nil
+}
+
+// sigmoid more .. https://mathworld.wolfram.com/SigmoidFunction.html
+func Sigmoid(x float64) float64 {
+	return 1.0 / (1.0 + math.Exp(-x))
+}
+
+// sigmoidPrime
+func SigmoidPrime(x float64) float64 {
+	return x * (1.0 - x)
 }
