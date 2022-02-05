@@ -1,6 +1,6 @@
 #### Building a neural network from scratch with Golang
 
-Simply neural network built in go
+Simple neural network built in go
 
 
 ##### install dependencies
